@@ -66,18 +66,54 @@ form button:hover {
     margin: 30px auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    list-style: none;
+    max-width: 60%;
+}
+
+.todo {
+    margin: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid #D3B6D9;
+    padding: 10px ;
+}
+
+.todo li {
+    flex: 1;
+}
 
 .trash-btn, 
 .complete-btn {
-
+    background: #E95E63;
+    color:#D3B6D9;
+    padding: 15px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-.todo-item li {
-    padding: 20px 30px;
-    border-bottom: 0.5px solid #D3B6D9; 
-    list-style-type: none;
+.trash-btn {
+    background: #2DABB8 ;
 }
 
+.fa-x,
+.fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
 
 .filter {
     padding: 20px;

@@ -3,7 +3,8 @@ const todoButton = document.querySelector(".entry-button");
 const todoList = document.querySelector(".todo-list"); 
 
 document.addEventListener("DOMContentLoaded",getTodos)
-todoButton.addEventListener("click", addTodo); 
+todoButton.addEventListener("click", addTodo);  
+todoList.addEventListener("click", deleteCheck); 
 
 function addTodo(event) {
     event.preventDefault(); 
@@ -14,7 +15,7 @@ function addTodo(event) {
     newTodo.textContent = todoInput.value; 
     newTodo.classList.add("todo-item"); 
     todoDiv.appendChild(newTodo);
-    todoDiv.addEventListener("click", deleteCheck); 
+    // todoDiv.addEventListener("click", deleteCheck); 
 
     saveLocalTodos(todoInput.value); 
 
@@ -24,7 +25,7 @@ function addTodo(event) {
     todoDiv.appendChild(completedButton);
     
     const trashButton = document.createElement("button"); 
-    trashButton.innerHTML = '<i class="fa-solid fa-xmark"></i>'; 
+    trashButton.innerHTML = '<i class="fa-solid fa-x"></i>'; 
     trashButton.classList.add("trash-btn"); 
     todoDiv.appendChild(trashButton);
 
@@ -35,15 +36,18 @@ function addTodo(event) {
 
 function deleteCheck(e){
     const item = e.target; 
-
+ 
     if (item.classList[0] === "trash-btn") {
         const todo = item.parentElement; 
 
         todo.classList.add("fall"); 
-        removeLocalTodos(todo); 
+
+        
         todo.addEventListener("transitionend", function(){
             todo.remove(); 
         }); 
+
+        removeLocalTodos(todo); 
     }
 
     if (item.classList[0] === "complete-btn") {
@@ -85,7 +89,7 @@ function getTodos(){
     todoDiv.appendChild(completedButton);
     
     const trashButton = document.createElement("button"); 
-    trashButton.innerHTML = '<i class="fa-solid fa-xmark"></i>'; 
+    trashButton.innerHTML = '<i class="fa-solid fa-x"></i>'; 
     trashButton.classList.add("trash-btn"); 
     todoDiv.appendChild(trashButton);
 
