@@ -67,6 +67,10 @@ form button:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.trash-btn, 
+.complete-btn {
+
+}
 
 .todo-item li {
     padding: 20px 30px;
