@@ -68,7 +68,7 @@ form button:hover {
 }
 
 
-.todos li {
+.todo-item li {
     padding: 20px 30px;
     border-bottom: 0.5px solid #D3B6D9; 
     list-style-type: none;
